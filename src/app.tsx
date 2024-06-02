@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import "./app.css";
 import Navbar from "./components/Navbar";
+import { MetaProvider } from "@solidjs/meta";
 
 // Don't register
 if (typeof window !== "undefined") {
@@ -15,10 +16,10 @@ export default function App() {
   return (
     <Router
       root={(props) => (
-        <>
+        <MetaProvider>
           <Navbar />
           <Suspense>{props.children}</Suspense>
-        </>
+        </MetaProvider>
       )}
     >
       <FileRoutes />
