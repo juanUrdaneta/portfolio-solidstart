@@ -5,5 +5,7 @@ export default defineConfig({
     prerender: {
       routes: ["/"],
     },
+    baseURL: process.env.BASE_PATH,
+    preset: "static",
   },
 });
